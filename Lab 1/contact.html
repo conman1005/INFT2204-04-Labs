@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>SOFTWARE COMPANY NAME PLACEHOLDER</title>
+    
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">INFT2022 - Lab 1</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="navItems" class="navbar-nav ms-auto mb-lg-0">
+                  <li class="nav-item">
+                    <a id="home" class="nav-link active" aria-current="page" href="#"><span class="fa fa-home"></span> Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="products" class="nav-link" href="#">Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="services" class="nav-link" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="about" class="nav-link" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="contact" class="nav-link" href="./contact.html">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="container">
+            <h1 class="top-header" style="text-align: center">Contact Us</h1>
+            <form id="registration-form" name="registration-form">
+                <p id="generalError"></p>
+                
+                <div class="form-group col-md-6">
+                  <label for="inputName">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputName"
+                    name="inputName"
+                    placeholder="Name"
+                  />
+                  <p id="nameError"></p>
+                </div>
+          
+                <div class="form-group col-md-6">
+                  <label for="inputEmail">Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputEmail"
+                    name="inputEmail"
+                    placeholder="Email"
+                  />
+                  <p id="emailError"></p>
+                </div>
+          
+                <div class="form-group col-md-6">
+                  <label for="inputPhone">Phone</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="inputPhone"
+                    name="inputPhone"
+                    placeholder="Phone Number"
+                  />
+                  <p id="phoneError"></p>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputMessage">Message</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputMessage"
+                    name="inputMessage"
+                    placeholder="Message"
+                  />
+                  <p id="messageError"></p>
+                </div>
+          
+                <div class="form-group">
+                  <input id="submit-reg-form" type="submit" value="Send" name="Submit" class="btn btn-primary" />
+                  <input type="reset" value="Reset" name="Reset" class="btn btn-outline-primary" />
+                </div>
+            </form>
+        </div>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./scripts/app.js"></script>
+        <script src="./scripts/contactForm.js"></script>
+    </body>
+</html>
