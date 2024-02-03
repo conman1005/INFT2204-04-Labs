@@ -1,4 +1,4 @@
-#roundCornersBox {
+  p.roundCornersBox {
     margin: auto;
     border-radius: 25px;
     background: rgb(255, 255, 255);
@@ -7,7 +7,7 @@
     height: 120px;  
   }
 
-  #projectsBox {
+  p.projectsBox {
     text-align: center;
     margin: auto;
     border-radius: 25px;
@@ -15,4 +15,11 @@
     padding: 20px; 
     width: 600px;
     height: 700px;  
+  }
+
+  #index {
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
