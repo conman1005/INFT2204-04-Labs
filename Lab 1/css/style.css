@@ -6,3 +6,13 @@
     width: 600px;
     height: 120px;  
   }
+
+  #projectsBox {
+    text-align: center;
+    margin: auto;
+    border-radius: 25px;
+    background: rgb(203, 203, 203);
+    padding: 20px; 
+    width: 600px;
+    height: 700px;  
+  }
