@@ -17,9 +17,37 @@
     height: 700px;  
   }
 
+  p.serviceBox {
+    text-align: center;
+    margin: auto;
+    border-radius: 25px;
+    background: rgb(203, 203, 203);
+    padding: 20px; 
+    width: 600px;
+    height: 475px;  
+  }
+
+  table.aboutUs {
+    border: solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    text-align: center;
+  }
+
+  th.aboutUs, td.aboutUs {
+    text-align: center;
+  }
+
   #index {
     background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+  }
+
+  img.aboutUs {
+    margin-left: auto;
+    margin-right: auto;
   }
