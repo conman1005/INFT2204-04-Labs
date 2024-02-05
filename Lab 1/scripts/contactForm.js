@@ -1,3 +1,8 @@
+// Made by Conner Cullity (100760244) and Aiden Skinner (100881254)
+// Date Completed: 2024-02-05
+
+
+
 /*
  * Validate the email address
  * @param {string}       emailString

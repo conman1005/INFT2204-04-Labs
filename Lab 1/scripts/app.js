@@ -1,9 +1,12 @@
+// Made by Conner Cullity (100760244) and Aiden Skinner (100881254)
+// Date Completed: 2024-02-05
+
 // Get the NavBar
 const navItems = document.getElementById("navItems");
 
 // Change Products to Projects
 const productButton = document.getElementById("products");
-productButton.innerHTML = "\<span class=\"fa fa-boxes\"\\></span>Projects";
+productButton.innerHTML = "\<span class=\"fa fa-home\"\\>\</span\>Projects";
 
 // Add Human Resources to NavBar
 // create new list item

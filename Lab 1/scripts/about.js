@@ -1,3 +1,6 @@
+// Made by Conner Cullity (100760244) and Aiden Skinner (100881254)
+// Date Completed: 2024-02-05
+
 // constant reused attributes
 const br = "\<br/\>";
 const boldB = "\<b\>";
