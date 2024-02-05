@@ -3,7 +3,7 @@ const navItems = document.getElementById("navItems");
 
 // Change Products to Projects
 const productButton = document.getElementById("products");
-productButton.innerHTML = "Projects";
+productButton.innerHTML = "\<span class=\"fa fa-boxes\"\\></span>Projects";
 
 // Add Human Resources to NavBar
 // create new list item
