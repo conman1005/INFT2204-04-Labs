@@ -33,7 +33,35 @@ form.on("submit", function(e) {
     }
     else {
         $(errorMessage).text("");
+         var user = new User(vals[0], vals[1], vals[2], vals[3]);
+         user.print();
     }
 
     e.preventDefault();
 });
+
+
+class User {
+    constructor(fName, lName, email, password) {
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+        this.password = password;
+    }
+
+    toString() {
+        return ("Name: " + this.fName + " " + this.lName + "\nEmail: " + this.email+ "\nPassword: " + this.password);
+    }
+
+    print() {
+        console.log(this.toString());
+    }
+
+    toArray() {
+        return [this.fName, this.lName, this.email, this.password];
+    }
+
+    toAssocArray() {
+        return {'fName': this.fName, 'lName': this.lName, 'email': this.email, 'password': this.password};
+    }
+}
