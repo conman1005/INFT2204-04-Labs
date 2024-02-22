@@ -7,7 +7,7 @@ $(form).append(errorMessage);
 form.on("submit", function(e) {
 
     var values = $(this).serializeArray();
-    var vals = ["", ""];
+    var vals = ["", "", "", ""];
 
     $.each(values, function(i, value) {
         vals[i] = value.value.trim();
