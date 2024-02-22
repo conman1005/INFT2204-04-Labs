@@ -1,14 +1,18 @@
+// Get form element
 const form = $("#login-form");
-form.on("submit", function(e) {
-    const submit = document.getElementById("btnLogin");
 
+// Run this function on submit
+form.on("submit", function(e) {
+    // retrieve serializedArrray as values from form and initialize vals array
     var values = $(this).serializeArray();
     var vals = ["", ""];
 
+    // Run through each value and insert into vals array
     $.each(values, function(i, value) {
         vals[i] = value.value.trim();
     });
 
+    // print login credentials to console
     console.log("Username: " + vals[0] + " Password: " + vals[1] + values);
 
 
@@ -27,6 +31,6 @@ form.on("submit", function(e) {
     navItems.insertBefore(newNavItem, navItems.children[6]);
     //navItems.appendChild(newNavItem);
 
-
+    // stop form from submitting (stops refresh)
     e.preventDefault();
 });

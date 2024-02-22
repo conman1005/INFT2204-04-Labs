@@ -1,6 +1,58 @@
 // Made by Conner Cullity (100760244) and Aiden Skinner (100881254)
 // Date Completed: 2024-02-05
 
+/**
+ * Class for User Object
+ */
+class User {
+    /**
+     * 
+     * @param {String} fName First Name
+     * @param {String} lName Last Name
+     * @param {String} email Email
+     * @param {String} password Password
+     */
+    constructor(fName, lName, email, password) {
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+        this.password = password;
+    }
+    /**
+     * 
+     * @returns User representes as a String
+     */
+    toString() {
+        return ("Name: " + this.fName + " " + this.lName + "\nEmail: " + this.email+ "\nPassword: " + this.password);
+    }
+
+    /**
+     * Prints contents of toString() to console
+     */
+    print() {
+        console.log(this.toString());
+    }
+
+    /**
+     * 
+     * @returns User represented as serialized array [1: First Name, 2: Last Name, 3: Email, 4: Password]
+     */
+    toArray() {
+        return [this.fName, this.lName, this.email, this.password];
+    }
+
+    /**
+     * 
+     * @returns User represented as Acssociated array [fName, lName, email, password]
+     */
+    toAssocArray() {
+        return {'fName': this.fName, 'lName': this.lName, 'email': this.email, 'password': this.password};
+    }
+}
+export default User;
+
+
+
 // Get the NavBar
 const navItems = document.getElementById("navItems");
 
