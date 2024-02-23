@@ -20,7 +20,7 @@ class User {
     }
     /**
      * 
-     * @returns User representes as a String
+     * @returns {String} User representes as a String
      */
     toString() {
         return ("Name: " + this.fName + " " + this.lName + "\nEmail: " + this.email+ "\nPassword: " + this.password);
@@ -35,7 +35,7 @@ class User {
 
     /**
      * 
-     * @returns User represented as serialized array [1: First Name, 2: Last Name, 3: Email, 4: Password]
+     * @returns {String[]} User represented as serialized array [1: First Name, 2: Last Name, 3: Email, 4: Password]
      */
     toArray() {
         return [this.fName, this.lName, this.email, this.password];
@@ -43,12 +43,77 @@ class User {
 
     /**
      * 
-     * @returns User represented as Acssociated array [fName, lName, email, password]
+     * @returns {String[]} User represented as Acssociated array [fName, lName, email, password]
      */
     toAssocArray() {
         return {'fName': this.fName, 'lName': this.lName, 'email': this.email, 'password': this.password};
     }
+
+    /**
+     * 
+     * @returns {String} First Name
+     */
+    getFirstName() {
+        return this.fName;
+    }
+
+    /**
+     * Sets First Name
+     * @param {String} fName 
+     */
+    setFirstName(fName) {
+        this.fName = fName;
+    }
+
+    /**
+     * 
+     * @returns {String} Last Name
+     */
+    getLastName() {
+        return this.lName;
+    }
+
+    /**
+     * Sets Last Name
+     * @param {String} lName 
+     */
+    setLastName(lName) {
+        this.lName = lName;
+    }
+
+    /**
+     * 
+     * @returns {String} Email
+     */
+    getEmail() {
+        return this.email;
+    }
+
+    /**
+     * Sets Email
+     * @param {String} email 
+     */
+    setEmail(email) {
+        this.email = email;
+    }
+
+    /**
+     * 
+     * @returns {String} Password (Should be hash in future)
+     */
+    getPassword() {
+        return this.password;
+    }
+
+    /**
+     * Sets Password (Should be hash in future)
+     * @param {String} password 
+     */
+    setPassword(password) {
+        this.password = password;
+    }
 }
+// export User class to be imported into register.js
 export default User;
 
 
