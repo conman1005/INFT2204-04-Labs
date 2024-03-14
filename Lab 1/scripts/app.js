@@ -11,12 +11,19 @@ class User {
      * @param {String} lName Last Name
      * @param {String} email Email
      * @param {String} password Password
+     * 
+     * @throws Invalid Object Type
      */
     constructor(fName, lName, email, password) {
         this.fName = fName;
         this.lName = lName;
         this.email = email;
         this.password = password;
+
+        // Make sure each Object given are Strings.
+        if (typeof fName != 'string' || typeof lName != 'string' || typeof email != 'string' || typeof password != 'string') {
+            throw new Error('Invalid Type: Only String variables in the User constructor. Wait... How did you send a non-String through a form?');
+        }
     }
     /**
      * 
@@ -60,8 +67,13 @@ class User {
     /**
      * Sets First Name
      * @param {String} fName 
+     * @throws Invalid Object Type
      */
     setFirstName(fName) {
+        // Make sure Object given is a String
+        if (typeof fName != 'string') {
+            throw new Error('Invalid Type: lName (Last Name) can only be a String.');
+        }
         this.fName = fName;
     }
 
@@ -76,8 +88,13 @@ class User {
     /**
      * Sets Last Name
      * @param {String} lName 
+     * @throws Invalid Object Type
      */
     setLastName(lName) {
+        // Make sure Object given is a String
+        if (typeof lName != 'string') {
+            throw new Error('Invalid Type: fName (First Name) can only be a String.');
+        }
         this.lName = lName;
     }
 
@@ -92,8 +109,13 @@ class User {
     /**
      * Sets Email
      * @param {String} email 
+     * @throws Invalid Object Type
      */
     setEmail(email) {
+        // Make sure Object given is a String
+        if (typeof email != 'string') {
+            throw new Error('Invalid Type: email can only be a String.');
+        }
         this.email = email;
     }
 
@@ -108,8 +130,13 @@ class User {
     /**
      * Sets Password (Should be hash in future)
      * @param {String} password 
+     * @throws Invalid Object Type
      */
     setPassword(password) {
+        // Make sure Object given is a String
+        if (typeof password != 'string') {
+            throw new Error('Invalid Type: password can only be a String.');
+        }
         this.password = password;
     }
 }
@@ -118,8 +145,16 @@ export default User;
 
 
 
+
+
 // Get the NavBar
 const navItems = document.getElementById("navItems");
+
+try {
+    var user = new User(navItems, navItems, navItems, navItems);
+} catch (e) {
+    console.error(e);
+}
 
 // Change Products to Projects
 const productButton = document.getElementById("products");

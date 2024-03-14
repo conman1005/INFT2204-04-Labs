@@ -13,7 +13,7 @@ form.on("submit", function(e) {
     });
 
     // print login credentials to console
-    console.log("Username: " + vals[0] + " Password: " + vals[1] + values);
+    console.log("Username: " + vals[0] + " Password: " + vals[1]);
 
 
     // Get the NavBar
@@ -29,7 +29,6 @@ form.on("submit", function(e) {
 
     newNavItem.appendChild(navLink);
     navItems.insertBefore(newNavItem, navItems.children[6]);
-    //navItems.appendChild(newNavItem);
 
     // stop form from submitting (stops refresh)
     e.preventDefault();

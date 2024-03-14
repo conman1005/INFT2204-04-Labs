@@ -59,8 +59,13 @@ form.on("submit", function(e) {
     }
     else { // create user object and print user data to console if input is valid
         $(errorMessage).text("");
-         var user = new User(vals[0], vals[1], vals[2], vals[3]);
-         user.print();
+        // Use try-catch as the User constructor throws an error if any paramaters given are not a String.
+        try {
+            var user = new User(vals[0], vals[1], vals[2], vals[3]);
+            user.print();
+        } catch (e) {
+            console.error(e);
+        } 
     }
     // stop form from submitting (prevent refresh)
     e.preventDefault();
