@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head> 
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+    <body id="login">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">INFT2022 - Lab 1</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="navItems" class="navbar-nav ms-auto mb-lg-0">
+                  <li class="nav-item">
+                    <a id="home" class="nav-link active" aria-current="page" href="./"><span class="fa fa-home"></span> Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="products" class="nav-link" href="./projects.html">Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="services" class="nav-link" href="./services.html"><span class="fa fa-bell"></span> Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="about" class="nav-link" href="./about-us.html"><span class="fa fa-info"></span> About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="contact" class="nav-link" href="./contact.html"><span class="fa fa-phone"></span> Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="contact" class="nav-link" href="./login.html">Log In/Log Out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <nav class="form-group">
+            <h1>Login</h1>
+            <form id="login-form">
+    
+                <!-- form group for username entry -->
+                <div class="form-group col-md-6" id="username-group">
+                    <label for="inputUsername">Username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="inputUsername"
+                        name="inputUsername"
+                        placeholder="Username"
+                        required
+                    />
+                    <div class="errorMessage"></div>
+                </div>
+
+                <!-- form group for password 1 entry -->
+                <div class="form-group col-md-6" id="password-group">
+                    <label for="inputPassword">Password</label>
+                    <input
+                        type="password"
+                        class="form-control lbl lbl-username"
+                        id="inputPassword"
+                        name="inputPassword"
+                        placeholder="Password"
+                         required
+                     />
+                    <div class="errorMessage"></div>
+                </div>
+                <br/>
+                <!-- submit button -->
+                <button type="submit" class="btn btn-primary" id="btnLogin">
+                    Login
+                </button>
+            </form>
+            <br/>
+            <br/>
+            <p>Don't have an Account? <a href="./register.html">Register Here</a>!</p>
+          </nav>
+
+
+        
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./scripts/login.js"></script>
+        <script src="./scripts/app.js"></script>
+    </body>
+</html>
