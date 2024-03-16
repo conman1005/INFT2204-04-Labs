@@ -15,6 +15,8 @@ form.on("submit", function(e) {
     // print login credentials to console
     console.log("Username: " + vals[0] + " Password: " + vals[1] + values);
 
+    
+
 
     // Get the NavBar
     const navItems = document.getElementById("navItems");

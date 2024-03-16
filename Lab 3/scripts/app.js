@@ -1,10 +1,11 @@
 // Made by Conner Cullity (100760244) and Aiden Skinner (100881254)
 // Date Completed: 2024-02-05
 
+
 /**
  * Class for User Object
  */
-class User {
+class User2 {
     /**
      * 
      * @param {String} fName First Name
@@ -429,6 +430,7 @@ document.body.appendChild(navBottom);*/
     function displayContactList() 
     {
       // don't allow visitors to go here
+      console.log('dis');
       authGuard();
 
       if (localStorage.length > 0) 
@@ -539,11 +541,21 @@ document.body.appendChild(navBottom);*/
       });
     }
 
+    const form = $("#login-form");
+
+    // Run this function on submit
+    form.on("submit", function(e) {
+      performLogin();
+
+      e.preventDefault();
+    });
+
     /**
      * Processes the Login and performs validation
      */
     function performLogin()
     {
+      console.log('performelogin');
       let messageArea = $("#messageArea");
       messageArea.hide();
 
@@ -636,7 +648,7 @@ document.body.appendChild(navBottom);*/
           sessionStorage.clear();
 
           // redirect back to login
-          location.href = "/login";
+          location.href = "/login.html";
         });
 
         // make it look like each nav item is an active link
@@ -660,6 +672,7 @@ document.body.appendChild(navBottom);*/
 
     function authGuard()
     {
+      console.log('guard');
       if(!sessionStorage.getItem("user"))
       {
       // redirect back to login page
@@ -674,6 +687,7 @@ document.body.appendChild(navBottom);*/
 
     function ActiveLinkCallBack(activeLink)
     {
+      console.log('acLink');
       switch (activeLink) 
       {
         case "home": return displayHome;
@@ -685,7 +699,8 @@ document.body.appendChild(navBottom);*/
         case "edit": return displayEdit;
         case "login": return displayLogin;
         case "register": return displayRegister;
-        case "task-list.html": return DisplayTaskList();
+        case "task-list.html": authGuard();
+                               return DisplayTaskList();
         case "404": return display404;
         default:
           console.error("ERROR: callback does not exist: " + activeLink);
