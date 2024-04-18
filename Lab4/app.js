@@ -9,6 +9,18 @@ const app = express();
 // use port from env or default to 3000 if not set
 const PORT = process.env.PORT || 3000;
 
+// import body parser (Credit: https://stackoverflow.com/questions/5710358/how-to-access-post-form-fields-in-express)
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+
+// use it
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
+
+
 // configure routes
 app.use('/', animal);
 

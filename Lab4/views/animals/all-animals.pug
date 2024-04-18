@@ -9,6 +9,7 @@ include ../partials/title
             th Gender
             th Date of Birth 
             th Is Transportable
+            td Edit
         each animal in animals 
             tr
                 td=animal.Zoo   
@@ -18,3 +19,7 @@ include ../partials/title
                 td=animal.Gender  
                 td=animal.DOB + "<br/>(Age: " + animal.Age + ")"
                 td=animal.isTransportable 
+                td
+                    form(action="./edit" method="post") 
+                        input(type="hidden" id="_id" name="_id" value=animal._id)
+                        input(type="submit" value="Edit")

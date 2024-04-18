@@ -7,7 +7,7 @@ const router = express.Router();
 // Handle the '/student' URL with a GET method to use studentView function
 router.get('/animals', animalView);
 router.get('/submit', loadAddAnimal);
-router.get('/edit', editAnimalData);
+router.post('/edit', editAnimalData);
 router.get('/Save', submitAnimalData);
 
 // Export the router

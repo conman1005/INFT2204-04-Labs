@@ -1,23 +1,6 @@
 include ../partials/navbar
 include ../partials/title
-    table.table.table-striped
-        tr
-            th Zoo
-            th Scientific Name
-            th Common Name
-            th Given Name
-            th Gender
-            th Date of Birth 
-            th Is Transportable
-        each animal in animals 
-            tr
-                td=animal.Zoo   
-                td=animal.ScientificName
-                td=animal.CommonName     
-                td=animal.GivenName
-                td=animal.Gender  
-                td=animal.DOB + "<br/>(Age: " + animal.Age + ")"
-                td=animal.isTransportable 
+    
     form(action="/Save")
         label(for="Zoo") Zoo: 
         input(type="text", id="Zoo", name="Zoo", value=animals[0].Zoo)
