@@ -1,7 +1,7 @@
 include ../partials/navbar
 include ../partials/title
     
-    form(action="/Save")
+    form(action="/Save" method="post")
         label(for="Zoo") Zoo: 
         input(type="text", id="Zoo", name="Zoo", value=animals[0].Zoo)
         br
@@ -25,9 +25,9 @@ include ../partials/title
         br
         h2 Is Transportable?:
         label(for="isTransportableY") Yes
-        input(type="radio", id="isTransportableY", name="isTransportable" value="yes")
+        input(type="radio", id="isTransportableY", name="isTransportable" value="1")
         label(for="isTransportableN") No
-        input(type="radio", id="isTransportableN", name="isTransportable" value="No")
+        input(type="radio", id="isTransportableN", name="isTransportable" value="0")
         input(type="hidden", name="_id", value=animals[0]._id)
         br
         input(type="submit")

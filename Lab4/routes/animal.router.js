@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/animals', animalView);
 router.get('/submit', loadAddAnimal);
 router.post('/edit', editAnimalData);
-router.get('/Save', submitAnimalData);
+router.post('/Save', submitAnimalData);
 
 // Export the router
 module.exports = router;
