@@ -1,5 +1,5 @@
 const express = require('express');
-const { animalView, loadAddAnimal, editAnimalData } = require('../controllers/animal.controller');
+const { animalView, loadAddAnimal, editAnimalData, submitAnimalData } = require('../controllers/animal.controller');
 
 // Create an express router object
 const router = express.Router();
@@ -8,6 +8,7 @@ const router = express.Router();
 router.get('/animals', animalView);
 router.get('/submit', loadAddAnimal);
 router.get('/edit', editAnimalData);
+router.get('/Save', submitAnimalData);
 
 // Export the router
 module.exports = router;

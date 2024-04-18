@@ -18,7 +18,7 @@ include ../partials/title
                 td=animal.Gender  
                 td=animal.DOB + "<br/>(Age: " + animal.Age + ")"
                 td=animal.isTransportable 
-    form
+    form(action="/Save")
         label(for="Zoo") Zoo: 
         input(type="text", id="Zoo", name="Zoo", value=animals[0].Zoo)
         br
@@ -45,6 +45,7 @@ include ../partials/title
         input(type="radio", id="isTransportableY", name="isTransportable" value="yes")
         label(for="isTransportableN") No
         input(type="radio", id="isTransportableN", name="isTransportable" value="No")
+        input(type="hidden", name="_id", value=animals[0]._id)
         br
         input(type="submit")
 

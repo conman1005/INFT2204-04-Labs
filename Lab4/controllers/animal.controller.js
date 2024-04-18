@@ -22,6 +22,17 @@ function editAnimalData(req, res) {
     })
 }
 
+function submitAnimalData(req, res) {
+    const id = "66206bdfd56b85986996dbf2"
+    let success = true;
+    console.log("Submit Edit or New")
+
+    if (success) {
+        animalView(req, res);
+        //location.href = "./animals";
+    }
+}
+
 function loadAddAnimal(req, res) {
     res.render('./animals/entry-form', {
         pageTitle: 'INFT 2202 - Submit an Animal',
@@ -42,5 +53,6 @@ function animalView(req, res) {
 module.exports = {
     animalView,
     loadAddAnimal,
-    editAnimalData
+    editAnimalData,
+    submitAnimalData
 };
