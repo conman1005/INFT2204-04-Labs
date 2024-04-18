@@ -1,0 +1,51 @@
+include ../partials/navbar
+include ../partials/title
+    table.table.table-striped
+        tr
+            th Zoo
+            th Scientific Name
+            th Common Name
+            th Given Name
+            th Gender
+            th Date of Birth 
+            th Is Transportable
+        each animal in animals 
+            tr
+                td=animal.Zoo   
+                td=animal.ScientificName
+                td=animal.CommonName     
+                td=animal.GivenName
+                td=animal.Gender  
+                td=animal.DOB + "<br/>(Age: " + animal.Age + ")"
+                td=animal.isTransportable 
+    form
+        label(for="Zoo") Zoo: 
+        input(type="text", id="Zoo", name="Zoo", value=animals[0].Zoo)
+        br
+        label(for="ScientificName") Scientific Name: 
+        input(type="text", id="ScientificName", name="ScientificName", value=animals[0].ScientificName)
+        br
+        label(for="CommonName") Common Name: 
+        input(type="text", id="CommonName", name="CommonName", value=animals[0].CommonName)
+        br
+        label(for="GivenName") Given Name: 
+        input(type="text", id="GivenName", name="GivenName", value=animals[0].GivenName)
+        br
+        label(for="Gender") Gender: 
+        input(type="text", id="Gender", name="Gender", value=animals[0].Gender)
+        br
+        label(for="DOB") Date of Birth: 
+        input(type="text", id="DOB", name="DOB", value=animals[0].DOB)
+        br
+        label(for="Age") Age: 
+        input(type="text", id="Age", name="Age", value=animals[0].Age)
+        br
+        h2 Is Transportable?:
+        label(for="isTransportableY") Yes
+        input(type="radio", id="isTransportableY", name="isTransportable" value="yes")
+        label(for="isTransportableN") No
+        input(type="radio", id="isTransportableN", name="isTransportable" value="No")
+        br
+        input(type="submit")
+
+    
