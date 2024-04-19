@@ -1,42 +1,42 @@
 include ../partials/navbar
 include ../partials/title
     
-    form(action="/Save" method="post")
-        label(for="Zoo") Zoo: 
-        input(type="text", id="Zoo", name="Zoo")
-        br
-        label(for="ScientificName") Scientific Name: 
-        input(type="text", id="ScientificName", name="ScientificName")
-        br
-        label(for="CommonName") Common Name: 
-        input(type="text", id="CommonName", name="CommonName")
-        br
-        label(for="GivenName") Given Name: 
-        input(type="text", id="GivenName", name="GivenName")
-        br
-        label(for="Gender") Gender: 
-        h3 Male: 
-            input(type="radio", id="GenderM", name="Gender" value="Male")
-        h3 Female: 
-            input(type="radio", id="GenderF", name="Gender" value="Female")
-        h3 Other: 
-            input(type="radio", id="GenderO", name="Gender" value="Other" checked="true")
-        //input(type="text", id="Gender", name="Gender")
-        br
-        label(for="DOB") Date of Birth: 
-        input(type="date", onChange="setAge()", id="DOB", name="DOB", max=now)
-        //input(type="text", id="DOB", name="DOB")
-        br
-        label(for="Age") Age: 
-        input(type="text", id="Age", name="Age")
-        br
-        h2 Is Transportable?:
-        label(for="isTransportableY") Yes
-        input(type="radio", id="isTransportableY", name="isTransportable" value="1")
-        label(for="isTransportableN") No
-        input(type="radio", id="isTransportableN", name="isTransportable" value="0")
-        br
-        input(type="submit")
-        input(type="reset" value="Reset Form")
+        form(action="/Save" method="post")
+            label(for="Zoo") Zoo: 
+            input(type="text", id="Zoo", name="Zoo")
+            br
+            label(for="ScientificName") Scientific Name: 
+            input(type="text", id="ScientificName", name="ScientificName")
+            br
+            label(for="CommonName") Common Name: 
+            input(type="text", id="CommonName", name="CommonName")
+            br
+            label(for="GivenName") Given Name: 
+            input(type="text", id="GivenName", name="GivenName")
+            br
+            label(for="Gender") Gender: 
+            h3 Male: 
+                input(type="radio", id="GenderM", name="Gender" value="Male")
+            h3 Female: 
+                input(type="radio", id="GenderF", name="Gender" value="Female")
+            h3 Other: 
+                input(type="radio", id="GenderO", name="Gender" value="Other" checked="true")
+            //input(type="text", id="Gender", name="Gender")
+            br
+            label(for="DOB") Date of Birth: 
+            input(type="date", id="DOB", name="DOB", max=now)
+            //input(type="text", id="DOB", name="DOB")
+            //br
+            //label(for="Age") Age: 
+            //input(type="text", id="Age", name="Age")
+            br
+            h2 Is Transportable?:
+            label(for="isTransportableY") Yes
+            input(type="radio", id="isTransportableY", name="isTransportable" value="1")
+            label(for="isTransportableN") No
+            input(type="radio", id="isTransportableN", name="isTransportable" value="0")
+            br
+            input(type="submit")
+            input(type="reset" value="Reset Form")
 
-    
+        

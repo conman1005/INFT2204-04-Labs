@@ -1,29 +1,30 @@
 include ../partials/navbar
 include ../partials/title
-    table.table.table-striped
-        tr
-            th Zoo
-            th Scientific Name
-            th Common Name
-            th Given Name
-            th Gender
-            th Date of Birth 
-            th Is Transportable
-            td Edit
+        table(class="table table-striped w-75 p-3 w-auto" style='font-size: 15px; margin-left: auto; margin-right: auto;')
+            thead(class="thead-dark")
+                tr
+                    th Zoo
+                    th Scientific Name
+                    th Common Name
+                    th Given Name
+                    th Gender
+                    th Date_of_Birth
+                    th Is Transportable
+                    th Edit
 
-        // use n variable and add 1 each time animals is looped to get the date array id    
-        - var n = 0
-        each animal in animals 
-            tr
-                td=animal.Zoo   
-                td=animal.ScientificName
-                td=animal.CommonName     
-                td=animal.GivenName
-                td=animal.Gender  
-                td=dates[n] + " (Age: " + animal.Age + ")"
-                td=animal.isTransportable 
-                td
-                    form(action="./edit" method="post") 
-                        input(type="hidden" id="_id" name="_id" value=animal._id)
-                        input(type="submit" value="Edit")
-            - n++
+            // use n variable and add 1 each time animals is looped to get the date array id    
+            - var n = 0
+            each animal in animals 
+                tr
+                    td=animal.Zoo   
+                    td=animal.ScientificName
+                    td=animal.CommonName     
+                    td=animal.GivenName
+                    td=animal.Gender  
+                    td=dates[n] + " (Age: " + animal.Age + ")"
+                    td=animal.isTransportable 
+                    td
+                        form(action="./edit" method="post") 
+                            input(type="hidden" id="_id" name="_id" value=animal._id)
+                            input(type="submit" value="Edit")
+                - n++
