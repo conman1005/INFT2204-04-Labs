@@ -48,19 +48,17 @@ include ../partials/title
             br
             h4 Is This Animal Transportable?
             if animals[0].isTransportable == true
-                div(class="form-check")
-                    input(type="radio", class="", id="isTransportableY", name="isTransportable" value="1" checked="true")
-                    label(for="isTransportableY", class="") Yes 
-                    input(type="radio", class="", id="isTransportableN", name="isTransportable" value="0")
-                    label(for="isTransportableN", class="") No 
-                    input(type="hidden", name="_id", value=animals[0]._id)
+                label(for="isTransportableY", class="") Yes 
+                input(type="radio", class="", id="isTransportableY", name="isTransportable" value="1" checked="true")
+                label(for="isTransportableN", class="") No 
+                input(type="radio", class="", id="isTransportableN", name="isTransportable" value="0")
+                input(type="hidden", name="_id", value=animals[0]._id)
             else 
-                div(class="form-check")
-                    input(type="radio", class="", id="isTransportableY", name="isTransportable" value="1")
-                    label(for="isTransportableY", class="form-check-label") Yes
-                    input(type="radio", class="", id="isTransportableN", name="isTransportable" value="0" checked="true")
-                    label(for="isTransportableN", class="form-check-label") No 
-                    input(type="hidden", name="_id", value=animals[0]._id)
+                label(for="isTransportableY", class="") Yes
+                input(type="radio", class="", id="isTransportableY", name="isTransportable" value="1")
+                label(for="isTransportableN", class="") No 
+                input(type="radio", class="", id="isTransportableN", name="isTransportable" value="0" checked="true")
+                input(type="hidden", name="_id", value=animals[0]._id)
             br
             input(type="submit", class="form-control")
             input(type="reset", value="Reset Form", class="form-control")
