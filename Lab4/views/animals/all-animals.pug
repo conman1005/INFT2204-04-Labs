@@ -13,8 +13,9 @@ include ../partials/navbar
                     th Edit
 
             // use n variable and add 1 each time animals is looped to get the date array id    
-            - var n = 0
-            each animal in animals 
+            - var n = startIndex
+            - var endPage = startIndex + 30
+            //each animal in animals 
                 tr
                     td=animal.Zoo   
                     td=animal.ScientificName
@@ -28,3 +29,28 @@ include ../partials/navbar
                             input(type="hidden" id="_id" name="_id" value=animal._id)
                             input(type="submit" value="Edit")
                 - n++
+            while n < endPage & n < animals.length
+                tr
+                    td=animals[n].Zoo   
+                    td=animals[n].ScientificName
+                    td=animals[n].CommonName     
+                    td=animals[n].GivenName
+                    td=animals[n].Gender  
+                    td=dates[n] + " (Age: " + animals[n].Age + ")"
+                    td=animals[n].isTransportable 
+                    td
+                        form(action="./edit" method="post") 
+                            input(type="hidden" id="_id" name="_id" value=animals[n]._id)
+                            input(type="submit" value="Edit")
+                - n++
+            if (startIndex != 0)
+                form(action="./animals" method="get")
+                    if (startIndex - 30 < 0)
+                        input(type="hidden" id="pageIndexP" name="startIndex" value=0)
+                    else 
+                        input(type="hidden" id="pageIndexP" name="startIndex" value=startIndex-30)
+                    input(type="submit" value="Previous Page")
+            if (endPage < animals.length)
+                form(action="./animals" method="get")
+                    input(type="hidden" id="pageIndexN" name="startIndex" value=endPage)
+                    input(type="submit" value="Next Page")

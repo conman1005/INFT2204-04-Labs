@@ -14,6 +14,8 @@ const animalSchema = require('../models/animal').Animal;
 //const Animal = mongoose.model("Animal", animalSchema); 
 
 function loadAnimalData(req, res) {
+    let startIndex = req.query.startIndex | 0;
+    console.log(startIndex);
     animalSchema.find({}).then(function(animalList) {
         //console.log(animalList);
         let dates = [];
@@ -26,7 +28,8 @@ function loadAnimalData(req, res) {
         res.render('./animals/all-animals', {
             pageTitle: 'INFT 2202 - Animal List',
             animals: animalList,
-            dates: dates
+            dates: dates,
+            startIndex: startIndex
         })
     })
 }
@@ -102,7 +105,7 @@ async function submitAnimalData(req, res) {
 function loadAddAnimal(req, res) {
     res.render('./animals/entry-form', {
         pageTitle: 'INFT 2202 - Submit an Animal',
-        now: moment().format('YYYY-MM-DD')
+        now: moment().format('YYYY-MM-DD'),
     })
 }
 
