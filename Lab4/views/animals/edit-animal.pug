@@ -2,65 +2,65 @@ include ../partials/navbar
 include ../partials/title
 
     
-        form(action="/Save" method="post")
+        form(action="/Save", method="post", class="form-group w-50", style='font-size: 20px; margin-left: auto; margin-right: auto;')
             label(for="Zoo") Zoo: 
-            input(type="text", id="Zoo", name="Zoo", value=animals[0].Zoo)
+            input(type="text", class="form-control", id="Zoo", name="Zoo", value=animals[0].Zoo)
             br
             label(for="ScientificName") Scientific Name: 
-            input(type="text", id="ScientificName", name="ScientificName", value=animals[0].ScientificName)
+            input(type="text", class="form-control", id="ScientificName", name="ScientificName", value=animals[0].ScientificName)
             br
             label(for="CommonName") Common Name: 
-            input(type="text", id="CommonName", name="CommonName", value=animals[0].CommonName)
+            input(type="text", class="form-control", id="CommonName", name="CommonName", value=animals[0].CommonName)
             br
             label(for="GivenName") Given Name: 
-            input(type="text", id="GivenName", name="GivenName", value=animals[0].GivenName)
+            input(type="text", class="form-control", id="GivenName", name="GivenName", value=animals[0].GivenName)
             br
-            label(for="Gender") Gender: 
+            h4 Gender: 
             if animals[0].Gender == "Male"
-                h3 Male: 
-                    input(type="radio", id="GenderM", name="Gender" value="Male" checked="true")
-                h3 Female: 
-                    input(type="radio", id="GenderF", name="Gender" value="Female")
-                h3 Other: 
-                    input(type="radio", id="GenderO", name="Gender" value="Other")
+                label(for="GenderM") Male: 
+                input(type="radio", class="", id="GenderM", name="Gender" value="Male" checked="true")
+                label(for="GenderF") Female: 
+                input(type="radio", class="", id="GenderF", name="Gender" value="Female")
+                label(for="GenderO") Other: 
+                input(type="radio", class="", id="GenderO", name="Gender" value="Other")
             else if animals[0].Gender == "Female"
-                h3 Male: 
-                    input(type="radio", id="GenderM", name="Gender" value="Male")
-                h3 Female: 
-                    input(type="radio", id="GenderF", name="Gender" value="Female" checked="true")
-                h3 Other: 
-                    input(type="radio", id="GenderO", name="Gender" value="Other")
+                label(for="GenderM") Male: 
+                input(type="radio", class="", id="GenderM", name="Gender" value="Male")
+                label(for="GenderF") Female: 
+                input(type="radio", class="", class="form-control", id="GenderF", name="Gender" value="Female" checked="true")
+                label(for="GenderO") Other: 
+                input(type="radio", class="", id="GenderO", name="Gender" value="Other")
             else
-                h3 Male: 
-                    input(type="radio", id="GenderM", name="Gender" value="Male")
-                h3 Female: 
-                    input(type="radio", id="GenderF", name="Gender" value="Female")
-                h3 Other: 
-                    input(type="radio", id="GenderO", name="Gender" value="Other" checked="true")
+                label(for="GenderM") Male: 
+                input(type="radio", class="", id="GenderM", name="Gender" value="Male")
+                label(for="GenderF") Female: 
+                input(type="radio", class="", id="GenderF", name="Gender" value="Female")
+                label(for="GenderO") Other: 
+                input(type="radio", class="", id="GenderO", name="Gender" value="Other" checked="true")
             //input(type="text", id="Gender", name="Gender", value=animals[0].Gender)
             br
             label(for="DOB") Date of Birth: 
             //input(type="text", id="DOB", name="DOB", value=animals[0].DOB)
-            input(type="date", id="DOB", name="DOB", value=localizedDate, max=now)
+            input(type="date", class="form-control", id="DOB", name="DOB", value=localizedDate, max=now)
             //br
             //label(for="Age") Age: 
             //input(type="text", id="Age", name="Age", value=animals[0].Age)
             br
-            h2 Is This Animal Transportable?
+            h4 Is This Animal Transportable?
             if animals[0].isTransportable == true
-                label(for="isTransportableY") Yes 
-                input(type="radio", id="isTransportableY", name="isTransportable" value="1" checked="true")
-                label(for="isTransportableN") No 
-                input(type="radio", id="isTransportableN", name="isTransportable" value="0")
-                input(type="hidden", name="_id", value=animals[0]._id)
+                div(class="form-check")
+                    input(type="radio", class="", id="isTransportableY", name="isTransportable" value="1" checked="true")
+                    label(for="isTransportableY", class="") Yes 
+                    input(type="radio", class="", id="isTransportableN", name="isTransportable" value="0")
+                    label(for="isTransportableN", class="") No 
+                    input(type="hidden", name="_id", value=animals[0]._id)
             else 
-                label(for="isTransportableY") Yes 
-                input(type="radio", id="isTransportableY", name="isTransportable" value="1")
-                label(for="isTransportableN") No 
-                input(type="radio", id="isTransportableN", name="isTransportable" value="0" checked="true")
-                input(type="hidden", name="_id", value=animals[0]._id)
+                div(class="form-check")
+                    input(type="radio", class="", id="isTransportableY", name="isTransportable" value="1")
+                    label(for="isTransportableY", class="form-check-label") Yes
+                    input(type="radio", class="", id="isTransportableN", name="isTransportable" value="0" checked="true")
+                    label(for="isTransportableN", class="form-check-label") No 
+                    input(type="hidden", name="_id", value=animals[0]._id)
             br
-            input(type="submit")
-            input(type="reset", value="Reset Form")
-
-    
+            input(type="submit", class="form-control")
+            input(type="reset", value="Reset Form", class="form-control")
