@@ -15,10 +15,17 @@ include ../partials/title
         input(type="text", id="GivenName", name="GivenName")
         br
         label(for="Gender") Gender: 
-        input(type="text", id="Gender", name="Gender")
+        h3 Male: 
+            input(type="radio", id="GenderM", name="Gender" value="Male")
+        h3 Female: 
+            input(type="radio", id="GenderF", name="Gender" value="Female")
+        h3 Other: 
+            input(type="radio", id="GenderO", name="Gender" value="Other" checked="true")
+        //input(type="text", id="Gender", name="Gender")
         br
         label(for="DOB") Date of Birth: 
-        input(type="text", id="DOB", name="DOB")
+        input(type="date", onChange="setAge()", id="DOB", name="DOB", max=now)
+        //input(type="text", id="DOB", name="DOB")
         br
         label(for="Age") Age: 
         input(type="text", id="Age", name="Age")
@@ -30,5 +37,6 @@ include ../partials/title
         input(type="radio", id="isTransportableN", name="isTransportable" value="0")
         br
         input(type="submit")
+        input(type="reset" value="Reset Form")
 
     
