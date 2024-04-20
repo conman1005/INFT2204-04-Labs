@@ -13,11 +13,14 @@ const moment = require('moment');
 const animalSchema = require('../models/animal').Animal;
 //const Animal = mongoose.model("Animal", animalSchema); 
 
+// load animal date for animals list
 function loadAnimalData(req, res) {
+    // Set start index if Next/Previous buttons were pressed, othewise set to 0
     let startIndex = req.query.startIndex | 0;
-    console.log(startIndex);
+
+    // Find Animals
     animalSchema.find({}).then(function(animalList) {
-        //console.log(animalList);
+        // Initialize Dates array to hold dates converted from UTC
         let dates = [];
         // Convert UTC Format to YYYY-MM-DD
         for (let i = 0; i < animalList.length; i++) {
@@ -25,6 +28,7 @@ function loadAnimalData(req, res) {
             //console.log(dates[i], animalList[i].DOB);
         }
 
+        // render page
         res.render('./animals/all-animals', {
             pageTitle: 'INFT 2202 - Animal List',
             animals: animalList,
@@ -34,6 +38,7 @@ function loadAnimalData(req, res) {
     })
 }
 
+// load edit form
 function editAnimalData(req, res) {
     //const id = "66206bdfd56b85986996dbf2"
     const id = req.body._id;
@@ -51,13 +56,17 @@ function editAnimalData(req, res) {
 
 async function submitAnimalData(req, res) {
     //const id = "66206bdfd56b85986996dbf2"
+    // get ID from POST
     const id = req.body._id || false;
+    // success bool to indicate successful submission
     let success = true;
     console.log("Submit Edit or New")
 
     // Get the actual age from subtracting the birth year from today's year
     //Age = new Date().getFullYear() - parseInt(moment(req.body.DOB).format('YYYY'));
     //Age = parseInt(moment(req.body.DOB, 'YYYY').fromNow(true).slice(0, 4));
+
+    // Calculate age from Date of Birth using MomentJS
     Age = moment().diff(req.body.DOB, 'years');
     console.log(moment().diff(req.body.DOB, 'years'));
     
@@ -76,10 +85,12 @@ async function submitAnimalData(req, res) {
         //},
     };
 
+    // check if ID was given
     if (id) {
         // Search Parameters for ID
         const id = { _id: req.body._id}
 
+        // set Update object
         const set = {
             $set: {
                 update
@@ -87,6 +98,7 @@ async function submitAnimalData(req, res) {
         }
         
         //const result = await animals.updateOne(id, update, options);
+        // Find and Update
         const doc = await animalSchema.findOneAndUpdate(id, update); 
   
         //const output = await doc.update({update});
@@ -96,12 +108,14 @@ async function submitAnimalData(req, res) {
         await animal.save();
     }
 
+    // Send to animalView if successful
     if (success) {
         animalView(req, res);
         //window.location.search = "./animals";
     }
 }
 
+// render entry form
 function loadAddAnimal(req, res) {
     res.render('./animals/entry-form', {
         pageTitle: 'INFT 2202 - Submit an Animal',

@@ -1,3 +1,8 @@
+/*
+    Authour: Conner Cullity (100760244)
+    Date: 2024/04/19
+*/
+
 require('dotenv').config();
 
 const express = require('express');
