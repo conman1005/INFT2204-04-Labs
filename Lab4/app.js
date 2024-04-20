@@ -1,6 +1,7 @@
 /*
     Authour: Conner Cullity (100760244)
     Date: 2024/04/19
+    FYI: Aiden Skinner did not contribute to this Lab at all
 */
 
 require('dotenv').config();

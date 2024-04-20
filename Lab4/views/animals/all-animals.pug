@@ -56,3 +56,6 @@ div(class="w-75", style='font-size: 15px; margin-left: auto; margin-right: auto;
             form(action="./animals" method="get")
                 input(type="hidden", id="pageIndexN", name="startIndex", value=endPage)
                 input(type="submit", value="Next Page", style="margin-right: 0; margin-left: auto;")
+        form(action="./animals" method="get")
+                input(type="number", id="pageIndexS", name="startPage", value=pageNo, min=1, max=lastPage)
+                input(type="submit", value="Select Page", style="margin-right: 0; margin-left: auto;")

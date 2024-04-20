@@ -17,6 +17,14 @@ const animalSchema = require('../models/animal').Animal;
 function loadAnimalData(req, res) {
     // Set start index if Next/Previous buttons were pressed, othewise set to 0
     let startIndex = req.query.startIndex | 0;
+    
+    let startPage = req.query.startPage - 1 | false;
+
+    if (startPage) {
+        startIndex = startPage * 30;
+    }
+
+    let pageNo = Math.ceil(startIndex / 30);
 
     // Find Animals
     animalSchema.find({}).then(function(animalList) {
@@ -33,7 +41,9 @@ function loadAnimalData(req, res) {
             pageTitle: 'INFT 2202 - Animal List',
             animals: animalList,
             dates: dates,
-            startIndex: startIndex
+            startIndex: startIndex,
+            pageNo: pageNo + 1,
+            lastPage: Math.ceil(animalList.length / 30)
         })
     })
 }
